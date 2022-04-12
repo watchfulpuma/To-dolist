@@ -1,5 +1,6 @@
 //jshint esversion:6
 
+require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -18,7 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://admin-john:Nagoya2019!@cluster0.lmsio.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://" + process.env.ADMIN_NAME + ":" process.env.ADMIN_PASSWORD + "@cluster0.lmsio.mongodb.net/todolistDB");
 
 const itemsSchema = new Schema({
   name: String
