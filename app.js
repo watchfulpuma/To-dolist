@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://" + process.env.ADMIN_NAME + ":" process.env.ADMIN_PASSWORD + "@cluster0.lmsio.mongodb.net/todolistDB");
+mongoose.connect("mongodb+srv://" + process.env.ADMIN_NAME + ":" + process.env.ADMIN_PASSWORD + "@cluster0.lmsio.mongodb.net/todolistDB");
 
 const itemsSchema = new Schema({
   name: String
